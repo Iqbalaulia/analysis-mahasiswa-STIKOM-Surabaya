@@ -1,224 +1,263 @@
 html,
 body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    background-color: white;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background-color: white;
 }
 
-.button-generate {
-    margin: 5% 0% 0% 5%;
-    background-color: rgba(63, 195, 128, 1);
-    color: black;
+/* Content One */
+
+.content-one {
+  width: 100%;
+  height: auto;
+  /* border: 1px solid #000000; */
+  padding: 5%;
 }
 
-.analysis-chart-one {
-    width: 90%;
-    height: 500px;
-    margin: 2% 0% 0% 10%;
-    background-color: white;
-    box-shadow: 1px 1px 1px 1px;
-    border-radius: 1px;
+.content-in-one {
+  width: 100%;
+  height: auto;
+  /* border: 1px solid #000000; */
+  padding: 10%;
 }
 
-.btn-glyphicon {
-    padding: 8px;
-    background: #ffffff;
-    margin-right: 4px;
+.content-in-one .content-in-one-text {
+  width: 100%;
+  height: auto;
+  /* border: 1px solid #000000; */
+  margin: 25% 0% 0% 0%;
 }
 
-.icon-btn {
-    padding: 1px 15px 3px 2px;
-    border-radius: 50px;
+.content-in-one-text h1 {
+  text-align: center;
+  color: #000000;
+  font-weight: bold;
+  font-size: 90px;
+  font-family: "EB Garamond", serif;
+
+  /* text-underline-position: auto; */
+  /* border-bottom: 1px solid #000000; */
 }
 
-.analysis-chart-two {
-    width: 90%;
-    height: 500px;
-    margin: 2% 0% 0% 0%;
-    background-color: white;
-    box-shadow: 1px 1px 1px 1px;
-    border-radius: 1px;
+.content-in-one-text p {
+  text-align: center;
 }
 
-.name-tag {
-    font-family: "Noto Serif TC", serif;
+.content-in-one-img {
+  width: 100%;
+  height: auto;
+
+  /* border: 1px solid #000000; */
 }
 
-/* Selection */
-.selection {
-    padding: 2% 0% 0% 4.5%;
+.content-in-one-img img {
+  width: 100%;
 }
 
-/* Table data */
-.table-data {
-    width: 95%;
-    height: 0%;
-    padding: 1% 0% 0% 5%;
+/* End Content */
+
+/* Content Two */
+.content-two {
+  width: 100%;
+  height: auto;
+  /* border: 1px solid #000000; */
+  padding: 2%;
+  background-color: rgba(243, 241, 239, 1);
 }
 
-.pencarian {
-    margin: 5% 0% 0% 10%;
+.box-generate {
+  width: 100%;
+  height: auto;
+  /* border: 1px solid #000000; */
+  padding: 5%;
 }
 
-.select-data {
-    width: 60px;
-    height: 33px;
+.box-generate h2 {
+  text-align: center;
+  color: #000000;
+  font-weight: bold;
 }
 
-.pagination {
-    padding: 2px;
-    margin-top: -100px;
-    color: black;
+.box-generate .box-item {
+  width: 100%;
+  height: auto;
+  /* border: 1px solid #000000; */
+  padding: 5%;
 }
 
-/*======================================================
-                          Navbar
-  ======================================================*/
-#navbar {
-    background: white;
-    color: rgb(13, 26, 38);
+.box-item .item-generate-img {
+  width: 100%;
+  height: auto;
+  /* border: 1px solid #000000; */
+  /* box-shadow: 1px 1px 4px 4px rgba(189, 195, 199, 1); */
+}
+
+.item-generate-img img {
+  width: 40%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: auto;
+}
+
+.generate-button .button-generate {
+  margin: 5% 0% 5% 7%;
+  background-color: rgba(63, 195, 128, 1);
+  color: black;
+}
+
+.generate-button .btn-glyphicon {
+  padding: 10px;
+  background: #ffffff;
+  margin-right: 4px;
+}
+
+.generate-button .icon-btn {
+  padding: 1px 15px 3px 2px;
+  border-radius: 50px;
+}
+
+.box-item .item-generate-text {
+  width: 100%;
+  padding: 10%;
+  height: auto;
+  /* border: 1px solid #000000; */
+}
+
+.box-item .item-generate-text p {
+  color: #000000;
+  font-size: 40px;
+  text-align: center;
+  font-family: fantasy;
+}
+
+/* End Content */
+
+/* Content Three */
+
+.content-three {
+  width: 100%;
+  height: 300px;
+  background-color: rgba(246, 71, 71, 1);
+}
+
+/* End Content */
+
+/* Content FOur */
+.content-four {
+  width: 100%;
+  height: auto;
+  /* border: 1px solid #000000; */
+  padding: 5%;
+}
+
+.content-four .box-diagram {
+  width: 100%;
+  height: auto;
+  /* border: 1px solid #000000; */
+  box-shadow: 1px 1px 4px 4px rgba(238, 238, 238, 1);
+  border-radius: 10px;
+  padding: 5%;
+}
+
+.box-diagram h3 {
+  color: #000000;
+  text-align: center;
+}
+
+.box-diagram h4 {
+  color: #000000;
+  text-align: center;
+}
+
+/* End Content */
+
+/* Content Five */
+
+.dataTableSearch {
+  width: 100%;
+  height: auto;
+  /* border: 1px solid #000000; */
+  padding: 4%;
+}
+
+.searchEngine {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  /* border: 1px solid #000000; */
+  padding: 1%;
+  /* background: rgba(238, 238, 238, 1) */
+}
+
+.searchEngine input[type="text"] {
+  width: 40%;
+  height: auto;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  font-size: 16px;
+  background-color: white;
+  background-image: url("searchicon.png");
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+.searchEngine input[type="text"]:focus {
+  width: 100%;
+}
+
+/* End Content */
+
+/* Content Six */
+
+.contentSix {
+  width: 100%;
+  height: auto;
+  /* border: 1px solid #000000; */
+  padding: 5%;
+}
+
+#tombolScrollTop {
+  cursor: pointer;
+  position: fixed;
+  left: 96%;
+  bottom: 50px;
+  /* border: 3px solid #585858; */
+  background-color: white;
+  color: #585858;
+  border-radius: 100%;
+  height: 50px;
+  width: 50px;
+  font-size: 15px;
+  display: none;
+}
+
+@media (max-width: 580px) {
+  .content-jam-digital .clockStyle {
+    font-size: 50px;
+    border-bottom: 1px solid;
+    border-color: #5490ee;
+    color: #fff;
+    font-family: "Noto Serif", serif;
+  }
+
+  #tombolScrollTop {
+    cursor: pointer;
     position: fixed;
-    top: 0;
-    height: 60px;
-    line-height: 60px;
-    width: 100vw;
-    z-index: 10;
-    box-shadow: 1px 1px 1px 1px;
-}
-
-.nav-wrapper {
-    margin: auto;
-    text-align: center;
-    width: 70%;
-}
-
-@media (max-width: 768px) {
-    .nav-wrapper {
-        width: 90%;
-    }
-}
-
-@media (max-width: 638px) {
-    .nav-wrapper {
-        width: 100%;
-    }
-}
-
-.logo {
-    float: left;
-    margin-left: 28px;
-    font-size: 1.5em;
-    height: 60px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-}
-
-@media (max-width: 768px) {
-    .logo {
-        /*       margin-left: 5px; */
-    }
-}
-
-#navbar ul {
-    display: inline-block;
-    float: right;
-    list-style: none;
-    /* margin-right: 14px; */
-    margin-top: -2px;
-    text-align: right;
-    transition: transform 0.5s ease-out;
-    -webkit-transition: transform 0.5s ease-out;
-}
-
-@media (max-width: 640px) {
-    #navbar ul {
-        display: none;
-    }
-}
-
-@media (orientation: landscape) {
-    #navbar ul {
-        display: inline-block;
-    }
-}
-
-#navbar li {
-    display: inline-block;
-}
-
-#navbar li a {
-    color: rgb(13, 26, 38);
-    display: block;
-    font-size: 0.9em;
-    height: 50px;
-    letter-spacing: 1px;
-    margin: 0 20px;
-    padding: 0 4px;
-    position: relative;
-    text-decoration: none;
-    text-transform: uppercase;
-    transition: all 0.5s ease;
-    -webkit-transition: all 0.5s ease;
-}
-
-#navbar li a:hover {
-    /* border-bottom: 1px solid rgb(28, 121, 184); */
-    color: rgb(28, 121, 184);
-    transition: all 1s ease;
-    -webkit-transition: all 1s ease;
-}
-
-/* Animated Bottom Line */
-#navbar li a:before,
-#navbar li a:after {
-    content: "";
-    position: absolute;
-    width: 0%;
-    height: 1px;
-    bottom: -1px;
-    background: rgb(13, 26, 38);
-}
-
-#navbar li a:before {
-    left: 0;
-    transition: 0.5s;
-}
-
-#navbar li a:after {
-    background: rgb(13, 26, 38);
-    right: 0;
-    /* transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1); */
-}
-
-#navbar li a:hover:before {
-    background: rgb(13, 26, 38);
-    width: 100%;
-    transition: width 0.5s cubic-bezier((0.22, 0.61, 0.36, 1));
-}
-
-#navbar li a:hover:after {
-    background: transparent;
-    width: 100%;
-    /* transition: 0s; */
-}
-
-.name-twitter {
-    margin: 2.5% 0% 0% 4%;
-}
-
-.name-tag,
-h1 {
-    font-family: "Noto Serif";
-    text-align: center;
-}
-
-.name-facebook {
-    margin: 2% 0% 2% -1%;
-}
-
-.chart-one {
-    margin: 0% 0% 0% 25%;
-    height: 50%;
-    width: 400px;
+    left: 87%;
+    bottom: 50px;
+    border: 3px solid #585858;
+    background-color: white;
+    color: #585858;
+    border-radius: 100%;
+    height: 40px;
+    width: 40px;
+    font-size: 15px;
+    display: none;
+  }
 }

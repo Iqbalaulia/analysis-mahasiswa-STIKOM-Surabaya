@@ -23,9 +23,18 @@ $angkatan17AN = mysqli_query($db, "SELECT COUNT(message) AS pesan17AN FROM `tblf
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="icon" type="image/png" href="../resources/images/logoStikom.png">
+
+    <title>Crawling Facebook</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../resources/css/header.css">
+    <link rel="stylesheet" href="../resources/css/footer.css">
+    <link rel="stylesheet" href="../resources/css/facebook-crawling.css">
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
@@ -38,112 +47,59 @@ $angkatan17AN = mysqli_query($db, "SELECT COUNT(message) AS pesan17AN FROM `tblf
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
-    <link rel="stylesheet" href="../resources/css/navbar.css">
-    <link rel="stylesheet" href="../resources/css/twitter-crawling.css">
-    <link rel="stylesheet" href="../resources/css/footer.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css">
 
-    <link href="https://fonts.googleapis.com/css?family=Noto+Serif+TC" rel="stylesheet">
+    <!-- -- JQuery CDN -- -->
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css
-">
+    <script src="../resources/js/bootstrap.js"></script>
+    <script src="../resources/js/bootstrap.min.js"></script>
+    <script src="../resources/js/jquery.js"></script>
+    <script src="../resources/js/header.js"></script>
+    <script src="../resources/js/animate-scroll.js"></script>
+    <script src="../resources/data-timeline.js"></script>
+    <script src="../resources/js/scroll-top.js"></script>    
 
+
+    <!-- -- Jquery -- -->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js
+"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js
+"></script>
 
 
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Abril+Fatface|EB+Garamond" rel="stylesheet">
 
-    <title>Crawling Facebook</title>
 </head>
 
 <body>
+<?php include 'header-two.php'; ?>
 
-    <nav id="navbar" class="">
-        <div class="nav-wrapper">
-            <!-- Navbar Logo -->
-            <div class="logo">
-                <!-- Logo Placeholder for Inlustration -->
-                <a href="../index.php"><i class="fas fa-chess-knight"></i> Integrasi Data</a>
-            </div>
-
-            <!-- Navbar Links -->
-            <ul id="menu">
-                <li><a href="../index.php">Home</a></li>
-                <!---->
-                <li><a href="data-timeline.php">Data Timeline</a></li>
-                <!---->
-                <li><a href="twitter-crawling.php">Crawling Twitter</a></li>
-                <!---->
-                <li><a href="facebook-crawling.php">Crawling Facebook</a></li>
-            </ul>
-        </div>
-    </nav>
-
-
-    <!-- Button Generate Twitter -->
-    <!-- <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-12 col-sm-12 col-lg-12 col-xs-12">
-                <a class="btn icon-btn button-generate" href="../views/generate-data.php"><span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-success"></span>Generate
-                    Data Twitter</a>
-            </div>
-        </div>
-    </div> -->
-
-    <!-- Chart Analysis -->
-    <div class="container-fluid" style="margin: 5% 0% 0% 0%;">
-        <div class="row">
-            <div class="col-md-6">
-                <div class="analysis-chart-one">
-                   <!--  -->
-                   <div class="row">
-                        <div class="">
-                            <div class="nam-tag">
-
-                            </div>
-                        </div>
-                        <div class="col-md-12">
-                            <div class="name-tag">
-                                <h3>Analisis Jumlah Kritik Terhadap Stikom Surabaya Melalui Facebook</h3>
-                                <h4>Terdapat 20 Kritikan dengan Hastag #KritikStikom</h4>
-                            </div>
-                            <div class="chart-one">
-                                <canvas id="myChart" width="400" height="400"></canvas>
-
-                            </div>
-                        </div>
-                        <div class="">
-                            <div class="name-tag">
-
+    <!-- Content One -->
+    <div class="content-one">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6 col-sm-6">
+                    <div class="content-in-one">
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12">
+                                <div class="content-in-one-text">
+                                    <h1>Facebook</h1>
+                                   
+                                </div>
                             </div>
                         </div>
                     </div>
-                  
                 </div>
-            </div>
-            <div class="col-md-6">
-                <div class="analysis-chart-two">
-                <div class="row">
-                        <div class="">
-                            <div class="nam-tag">
-
-                            </div>
-                        </div>
-                        <div class="col-md-12">
-                            <div class="name-tag">
-                                <h3>Analisis Jumlah Kritik Terhadap Stikom Surabaya Melalui Facebook</h3>
-                                <h4>Terdapat Kritikan dengan kata Jelek, Sebel, Kurang, Kotor</h4>
-                            </div>
-                            <div class="chart-one">
-                                <canvas id="myFacebook" width="400" height="400"></canvas>
-
-                            </div>
-                        </div>
-                        <div class="">
-                            <div class="name-tag">
-
-                            </div>
-                        </div>
+                <div class="col-md-6 col-sm-6">
+                    <div class="content-in-one-img">
+                        <img src="../resources/images/facebook.png" alt="">
                     </div>
                 </div>
             </div>
@@ -151,48 +107,85 @@ $angkatan17AN = mysqli_query($db, "SELECT COUNT(message) AS pesan17AN FROM `tblf
     </div>
 
 
-    <div class="row">
-        <div class="col-md-6">
-            <div class="pencarian">
-                <form action="facebook-crawling.php" method="get">
-                    <label>Cari :</label>
-                    <input type="text" class="search" name="cari">
-                    <input type="submit" class="btn-seacrh" value="cari">
-                </form>
-            </div>
-        </div>
-        <div class="col-md-3">
+    <!-- End Content -->
 
-        </div>
-        <div class="col-md-3">
 
-        </div>
-    </div>
 
-    <!-- Data Table Twitter -->
 
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-12">
-                <!-- <div class="selection">
-                    <form method="post" action="" name="form">
-                        <select class="select-data" name="pagination">
-                            <option value="50">50</option>
-                            <option value="100">100</option>
-                            <option value="150">150</option>
-                        </select>
-                        <input name="submit" type="submit" class="btn btn-success" value="Cari">
-                    </form>
-                </div> -->
+    <!-- Content Two -->
+    <div class="content-two">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+
+                </div>
             </div>
         </div>
     </div>
 
 
+    <!-- End Content -->
 
-    <div class="row">
-        <div class="col-md-12 table-data">
-            <table class="table table-bordered">
+
+
+    <!-- Content Four -->
+    <div class="content-four">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6 col-sm-6">
+                    <div class="box-diagram">
+
+                        <h3>Analisis Jumlah Kritik Terhadap Stikom Surabaya Melalui Facebook </h3>
+                        <h4>Terdapat
+                            <?php while ($angkatan_All = mysqli_fetch_array($angkatanAllFB)) {
+                                echo $angkatan_All['pesanAllFB'];
+                            } ?>
+                            Kritikan dengan Hastag #KritikStikom</h4>
+                        <canvas id="myChart" width="100%" height="70px"></canvas>
+
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                    <div class="box-diagram">
+                        <h3>Analisis Jumlah Kritik Terhadap Stikom Surabaya Melalui Facebook</h3>
+                        <h4>Terdapat Kritikan dengan kata Jelek, Sebel, Kurang, Kotor</h4>
+                        <canvas id="myFacebook" width="100%" height="70px"></canvas>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- End Content -->
+
+
+    <!-- Content FIVE -->
+    <div class="dataTableSearch">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <div class="searchEngine">
+                        <form method="get" >
+                            <input type="text" name="cari" placeholder="Search..">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- End Content -->
+
+
+    <div class="contentSix">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <div class="table-data">
+                    <table class="table table-bordered">
                 <thead style="background-color:rgba(46, 49, 49, 1); color:white;">
                     <tr>
                         <th>No</th>
@@ -327,126 +320,24 @@ $angkatan17AN = mysqli_query($db, "SELECT COUNT(message) AS pesan17AN FROM `tblf
                 </tbody>
 
             </table>
-
-
-
+                    </div>
+                </div>
+            </div>
         </div>
-
     </div>
 
+
+
+    <!-- Footer -->
+    <?php include '../views/footer.php'; ?>
+    <img type="button" id="tombolScrollTop" onclick="scrolltotop()" src="../resources/images/up-arrow.png" alt="">
+
+    <!-- Analysis Diagram -->
+    <?php include '../views/analysis/analysisFCrawling.php'; ?>
+
+    <!-- Footer -->
 
 </body>
 
 
-
-<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js
-"></script>
-<script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js
-"></script>
-<script src="resources/js/data-timeline.js"></script>
-
 </html>
-
-
-<script>
-    var ctx = document.getElementById("myChart").getContext('2d');
-    var myChart = new Chart(ctx, {
-        type: 'pie',
-        data: {
-            labels: ["Angkatan 14", "Angkatan 15", "angkatan 16", "angkatan 17", "angkatan 18"],
-            datasets: [{
-                label: '# of Votes',
-                data: [ <?php while ($angkatan_14FB = mysqli_fetch_array($angkatan14FB)) {
-                            echo $angkatan_14FB['pesan14'];
-                        }; ?>,
-                        <?php while ($angkatan_15FB = mysqli_fetch_array($angkatan15FB)) {
-                            echo $angkatan_15FB['pesan15'];
-                        }; ?> ,
-                         <?php while ($angkatan_16FB = mysqli_fetch_array($angkatan16FB)) {
-                            echo $angkatan_16FB['pesan16'];
-                        }; ?>,
-                         <?php while ($angkatan_17FB = mysqli_fetch_array($angkatan17FB)) {
-                            echo $angkatan_17FB['pesan17'];
-                        }; ?>, 
-                         <?php while ($angkatan_18FB = mysqli_fetch_array($angkatan18FB)) {
-                            echo $angkatan_18FB['pesan18'];
-                        }; ?>],
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(75, 192, 192, 0.2)',
-                    'rgba(153, 102, 255, 0.2)'
-                ],
-                borderColor: [
-                    'rgba(255,99,132,1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(153, 102, 255, 1)'
-                ],
-                borderWidth: 1
-            }]
-        },
-        options: {
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero: true
-                    }
-                }]
-            }
-        }
-    });
-</script>
-
-<script>
-    var ctx = document.getElementById("myFacebook").getContext('2d');
-    var myChart = new Chart(ctx, {
-        type: 'pie',
-        data: {
-            labels: ["Jelek", "Sebel", "Kurang", "Kotor"],
-            datasets: [{
-                label: '# of Votes',
-                data: [ <?php while ($angkatan_14AN = mysqli_fetch_array($angkatan14AN)) {
-                            echo $angkatan_14AN['pesan14AN'];
-                        }; ?>,
-                         <?php while ($angkatan_15AN = mysqli_fetch_array($angkatan15AN)) {
-                            echo $angkatan_15AN['pesan15AN'];
-                        }; ?>,
-                         <?php while ($angkatan_16AN = mysqli_fetch_array($angkatan16AN)) {
-                            echo $angkatan_16AN['pesan16AN'];
-                        }; ?>
-                         ,<?php while ($angkatan_17AN = mysqli_fetch_array($angkatan17AN)) {
-                                echo $angkatan_17AN['pesan17AN'];
-                            }; ?> 
-                         ],
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(75, 192, 192, 0.2)',
-                    'rgba(153, 102, 255, 0.2)'
-                ],
-                borderColor: [
-                    'rgba(255,99,132,1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(153, 102, 255, 1)'
-                ],
-                borderWidth: 1
-            }]
-        },
-        options: {
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero: true
-                    }
-                }]
-            }
-        }
-    });
-</script>

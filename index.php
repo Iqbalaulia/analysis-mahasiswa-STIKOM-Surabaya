@@ -11,6 +11,8 @@ $angkatan18 = mysqli_query($db, "SELECT COUNT(tweet) AS tweet18 FROM `twitter_ti
 
 $angkatanAll = mysqli_query($db, "SELECT COUNT(tweet) AS tweetAll FROM `twitter_timeline` WHERE `tweet`LIKE '%KritikStikom%'");
 
+$angkatanTwitter = mysqli_query($db, "SELECT COUNT(tweet) AS tweetAll FROM `twitter_timeline` WHERE `tweet`LIKE '%KritikStikom%'");
+
 
 // Facebook
 
@@ -20,6 +22,8 @@ $angkatan16FB = mysqli_query($db, "SELECT COUNT(message) AS pesan16 FROM `tblfac
 $angkatan17FB = mysqli_query($db, "SELECT COUNT(message) AS pesan17 FROM `tblfacebook` WHERE `message`LIKE '%KritikStikom17%'");
 $angkatan18FB = mysqli_query($db, "SELECT COUNT(message) AS pesan18 FROM `tblfacebook` WHERE `message`LIKE '%KritikStikom18%'");
 $angkatanAllFB = mysqli_query($db, "SELECT COUNT(message) AS pesanAllFB FROM `tblfacebook` WHERE `message`LIKE '%KritikStikom%'");
+
+$angkatanFacebook = mysqli_query($db, "SELECT COUNT(message) AS pesanAllFB FROM `tblfacebook` WHERE `message`LIKE '%KritikStikom%'");
 
 
 // Twitter Crawling
@@ -32,7 +36,6 @@ $angkatan17TC = mysqli_query($db, "SELECT COUNT(tweet) AS tweet17 FROM `twitter_
 $angkatan18TC = mysqli_query($db, "SELECT COUNT(tweet) AS tweet18 FROM `twitter_timeline` WHERE `tweet`LIKE '%KritikStikom18%'");
 
 $angkatanAll = mysqli_query($db, "SELECT COUNT(tweet) AS tweetAll FROM `twitter_timeline` WHERE `tweet`LIKE '%KritikStikom%'");
-
 
 
 // Twitter
@@ -63,12 +66,23 @@ $angkatan17FBFC = mysqli_query($db, "SELECT COUNT(message) AS pesan17AN FROM `tb
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
- <!-- Latest compiled and minified CSS -->
- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+
+    <link rel="icon" type="image/png" href="resources/images/logoStikom.png">
+    <title>Dashboard</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="resources/css/header.css">
+    <link rel="stylesheet" href="resources/css/footer.css">
+    <link rel="stylesheet" href="resources/css/index.css">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
         crossorigin="anonymous">
 
     <!-- Optional theme -->
@@ -78,108 +92,298 @@ $angkatan17FBFC = mysqli_query($db, "SELECT COUNT(message) AS pesan17AN FROM `tb
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
-    <link rel="stylesheet" href="resources/css/navbar.css">
-    <link rel="stylesheet" href="resources/css/footer.css">
-    <link rel="stylesheet" href="resources/css/data-timeline.css">
 
-    <link href="https://fonts.googleapis.com/css?family=Noto+Serif+TC" rel="stylesheet">
+    <!-- -- JQuery CDN -- -->
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css
-">
+    <script src="resources/js/bootstrap.js"></script>
+    <script src="resources/js/bootstrap.min.js"></script>
+    <script src="resources/js/jquery.js"></script>
+    <script src="resources/js/header.js"></script>
+    <script src="resources/js/animate-scroll.js"></script>
+    <script src="resources/js/scroll-top.js"></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+
+
+    <!-- -- Jquery -- -->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 
-
-    <title>Dashboard</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|EB+Garamond" rel="stylesheet">
 </head>
+
 <body>
-<nav id="navbar" class="">
-        <div class="nav-wrapper">
-            <!-- Navbar Logo -->
-            <div class="logo">
-                <!-- Logo Placeholder for Inlustration -->
-                <a href="../index.php"><i class="fas fa-chess-knight"></i> Integrasi Data</a>
+    <?php include 'views/header.php'; ?>
+
+    <!-- Content Header -->
+    <div class="content-header">
+        <!-- <img src="resources/images/stikom.jpg" alt=""> -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <div class="content-header-view-one">
+
+                    </div>
+                </div>
+                <div class="col-md-12 col-sm-12">
+                    <div class="content-header-view-two">
+
+                    </div>
+                </div>
+                <div class="col-md-12 col-sm-12">
+                    <div class="content-header-view-three">
+                        <h1>SENTIMEN ETIKA POSTING PADA MEDIA SOSIAL MAHASISWA STIKOM SURABAYA</h1>
+                    </div>
+                </div>
             </div>
-
-            <!-- Navbar Links -->
-            <ul id="menu">
-                <li><a href="index.php">Home</a></li>
-                <!--
-   -->
-                <li><a href="../integrasi-uas-tester/views/data-timeline.php">Data Timeline</a></li>
-                <!--
-   -->
-                <li><a href="../integrasi-uas-tester/views/data-timeline.php">Crawling Twiiter</a></li>
-                <!--
-   -->
-                <li><a href="../integrasi-uas-tester/views/facebook-crawling.php">Crawling Facebook</a></li>
-            </ul>
         </div>
-    </nav>
+    </div>
+    <!--  -->
 
-	<br>
-    <br>
-    <br>
-    <br>
+    <!-- Content two -->
+    <!-- <div class="content-two">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <div class="content-two-header">
+                        <h1>SENTIMEN ETIKA POSTING PADA MEDIA SOSIAL MAHASISWA </h1>
+                        <h1>STIKOM SURABAYA</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <div class="content-two-purpose">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <div class="content-purpose">
+                        <h2>TUJUAN</h2>
+                    </div>
+                </div>
+                <div class="col-md-12 col-sm-12">
+                    <div class="content-purpose">
+                        <p>Tujuan dari aplikasi ini ialah melakukan integrasi data dari <i>Twitter</i> <i>Facebook</i>
+                            berdasarkan pada postingan akun mahasiswa <i> Institut Bisnis dan Informatika STIKOM
+                                Surabaya </i>
+                            yang berisikan kata "Stikom" untuk dapat mengetahui etika posting status atau tweet
+                            mahasiswa dalam menggunakan <i> Sosial Website.</i> </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-6">
-                <div class="analysis-chart-one">
-                    <div class="row">
-                        <div class="">
-                            <div class="name-tag">
+    <!-- End Content -->
 
+    <!-- Content Seven -->
+    <div class="content-seven">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <div class="content-text-perbandingan">
+                        <h1>Jumlah Perbandingan Data antara Pengguna Facebook dan Twitter Mahasiswa STIKOM Surabaya Mengenai Tingkat Etika Posting pada Media Sosial </h1>
+                    </div>
+                </div>
+                <div class="col-md-12 col-sm-12">
+                    <div class="content-diagram-all">
+                    <canvas id="data-perbandingan" width="100%" height="50px"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- End Content -->
+
+
+
+
+
+
+
+
+
+    <!-- Content Three -->
+    <div class="content-three">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <div class="content-three-header">
+                        <h2>DATA TWITTER & FACEBOOK MAHASISWA STIKOM SURABAYA</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <div class="content-three-FT">
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6">
+                                <div class="content-three-facebook-diagram">
+                                    <div class="row">
+                                        <div class="col-md-12 col-sm-12">
+                                            <div class="facebook-diagram">
+                                                <h4>Analisis Jumlah Kritik Terhadap Stikom Surabaya Melalui Twitter
+                                                </h4>
+                                                <h5>Terdapat
+                                                    <?php while ($angkatan_All = mysqli_fetch_array($angkatanAll)) {
+                                                        echo $angkatan_All['tweetAll'];
+                                                    }; ?>
+                                                    Kritikan dengan Hastag #KritikStikom</h5>
+                                                <canvas id="myChartDT" width="100%" height="70px"></canvas>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-12">
-                            <div class="name-tag">
-                                <h3>Analisis Jumlah Kritik Terhadap Stikom Surabaya Melalui Twitter </h3>
-                                <h4>Terdapat <?php while ($angkatan_All = mysqli_fetch_array($angkatanAll)) {
-                                                echo $angkatan_All['tweetAll'];
-                                            }; ?> Kritikan dengan Hastag #KritikStikom</h4>
-                            </div>
-                            <div class="chart-one">
-                                <canvas id="myChartDT" width="400px" height="400px"></canvas>
-                                
-                                <br>
-                            </div>
-                        </div>
-
-                        <div class="">
-                            <div class="name-tag">
-
+                            <div class="col-md-6 col-sm-6">
+                                <div class="content-three-twitter-diagram">
+                                    <div class="row">
+                                        <div class="col-md-12 col-sm-12">
+                                            <div class="twitter-diagram">
+                                                <h4>Analisis Jumlah Kritik Terhadap Stikom Surabaya Melalui Facebook</h4>
+                                                <h5>Terdapat
+                                                    <?php while ($angkatan_AllFB = mysqli_fetch_array($angkatanAllFB)) {
+                                                        echo $angkatan_AllFB['pesanAllFB'];
+                                                    }; ?>
+                                                    Kritikan dengan Hastag #KritikStikom</h5>
+                                                <canvas id="myFacebookDT" width="100%" height="70px"></canvas>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- End Content -->
+
+
+    <!-- Content Four -->
+
+
+    <div class="content-analysis">
+        <!-- <img src="resources/images/stikom.jpg" alt=""> -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <div class="content-analaysis-view">
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- End Content -->
+
+
+
+    <!-- Content Five -->
+    <div class="content-analysis-facebook">
+        <div class="container-fluid">
+            <div class="row">
+                <h2>ANALYSIS TWITTER</h2>
+                <div class="col-md-4 col-sm-4">
+                    <!-- <img src="resources/images/analysisTW.png" alt=""> -->
+                </div>
+                <div class="col-md-4 col-sm-4">
+                    <img src="resources/images/analysisTW.png" alt="">
+                    <p>Berikut ini merupakan analisis mengenai Twitter , dimana kami melakukan riset untuk mengetahui
+                        seberapa banyak mahasiswa STIKOM Surabaya yang meng-kritik mengenai kampus di sosial media
+                        Twitter</p>
+                </div>
+                <div class="col-md-4 col-sm-4">
+                    <!-- <img src="resources/images/analysisTW.png" alt=""> -->
+                </div>
+                <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                        <div class="content-diagram-analysis-facebook">
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="content-analysis-facebook-one">
+                                        <h4>Analisis Jumlah Kritik Terhadap Stikom Surabaya Melalui Twitter</h4>
+                                        <h5>Terdapat Kritikan dengan kata Jelek, Sebel, Kurang, Kotor</h5>
+                                        <canvas id="myFacebookTC" width="100%" height="70px"></canvas>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="content-analysis-facebook-two">
+                                        <img src="resources/images/analysis.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- End Content -->
+
+
+
+    <!-- Content Six -->
+    <div class="content-pembatas">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
 
                 </div>
             </div>
-            <div class="col-md-6">
-                <div class="analysis-chart-two">
-                    <div class="row">
-                        <div class="">
-                            <div class="nam-tag">
+        </div>
+    </div>
+    <!-- End Content -->
 
-                            </div>
-                        </div>
-                        <div class="col-md-12">
-                            <div class="name-tag">
-                                <h3>Analisis Jumlah Kritik Terhadap Stikom Surabaya Melalui Facebook</h3>
-                                <h4>Terdapat <?php while ($angkatan_AllFB = mysqli_fetch_array($angkatanAllFB)) {
-                                                echo $angkatan_AllFB['pesanAllFB'];
-                                            }; ?> Kritikan dengan Hastag #KritikStikom</h4>
-                            </div>
-                            <div class="chart-one">
-                                <canvas id="myFacebookDT" width="400" height="400"></canvas>
 
-                            </div>
-                        </div>
-                        <div class="">
-                            <div class="name-tag">
 
+    <!-- Content Seven -->
+    <div class="content-analysis-twitter">
+        <div class="container-fluid">
+            <div class="row">
+                <h2>ANALYSIS FACEBOOK</h2>
+                <div class="col-md-4 col-sm-4">
+                    <!-- <img src="resources/images/analysisTW.png" alt=""> -->
+                </div>
+                <div class="col-md-4 col-sm-4">
+                    <img src="resources/images/analysisTW.png" alt="">
+                    <p>Berikut ini merupakan analisis mengenai Facebook , dimana kami melakukan riset untuk mengetahui
+                        seberapa banyak mahasiswa STIKOM Surabaya yang meng-kritik mengenai kampus di sosial media
+                        Facebook</p>    
+                </div>
+                <div class="col-md-4 col-sm-4">
+                    <!-- <img src="resources/images/analysisTW.png" alt=""> -->
+                </div>
+                <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                        <div class="content-diagram-analysis-twitter">
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="content-analysis-twitter-one">
+                                        <img src="resources/images/analysis.png" alt="">
+
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="content-analysis-twitter-two">
+                                        <h4>Analisis Jumlah Kritik Terhadap Stikom Surabaya Melalui Facebook</h4>
+                                        <h5>Terdapat Kritikan dengan kata Jelek, Sebel, Kurang, Kotor</h5>
+                                        <canvas id="myFacebookFC" width="100%" height="70px"></canvas>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -189,454 +393,15 @@ $angkatan17FBFC = mysqli_query($db, "SELECT COUNT(message) AS pesan17AN FROM `tb
     </div>
 
 
+    <!-- End Content -->
 
-	    <!-- Chart Analysis -->
-		<div class="container-fluid" style="margin: 0% 0% 0% 0%;">
-        <div class="row">
-            <div class="col-md-6">
-                <div class="analysis-chart-one">
-                   <!--  -->
-                   <div class="row">
-                        <div class="">
-                            <div class="nam-tag">
+    <!-- End Content -->
+    <?php include 'views/footer.php'; ?>
+    <img type="button" id="tombolScrollTop" onclick="scrolltotop()" src="resources/images/up-arrow.png" alt="">
 
-                            </div>
-                        </div>
-                        <div class="col-md-12">
-                            <div class="name-tag">
-                                <h3>Analisis Jumlah Kritik Terhadap Stikom Surabaya Melalui Twitter</h3>
-                                <h4>Terdapat 20 Kritikan dengan Hastag #KritikStikom</h4>
-                            </div>
-                            <div class="chart-one">
-                                <canvas id="myChartTC" width="400" height="400"></canvas>
+    <!-- Analysis Diagram -->
+    <?php include 'views/analysis/analysis-diagram.php'; ?>
 
-                            </div>
-                        </div>
-                        <div class="">
-                            <div class="name-tag">
-
-                            </div>
-                        </div>
-                    </div>
-                  
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="analysis-chart-two">
-                <div class="row">
-                        <div class="">
-                            <div class="nam-tag">
-
-                            </div>
-                        </div>
-                        <div class="col-md-12">
-                            <div class="name-tag">
-                                <h3>Analisis Jumlah Kritik Terhadap Stikom Surabaya Melalui Twitter</h3>
-                                <h4>Terdapat Kritikan dengan kata Jelek, Sebel, Kurang, Kotor</h4>
-                            </div>
-                            <div class="chart-one">
-                                <canvas id="myFacebookTC" width="400" height="400"></canvas>
-
-                            </div>
-                        </div>
-                        <div class="">
-                            <div class="name-tag">
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-<div class="container-fluid">
-        <div class="row">
-        <div class="row">
-            <div class="col-md-6">
-                <div class="analysis-chart-one">
-                <div class="row">
-                        <div class="">
-                            <div class="name-tag">
-
-                            </div>
-                        </div>
-                        <div class="col-md-12">
-                            <div class="name-tag">
-                                <h3>Analisis Jumlah Kritik Terhadap Stikom Surabaya Melalui Facebook </h3>
-                                <h4>Terdapat <?php while ($angkatan_AllFB = mysqli_fetch_array($angkatanAllFB)) {
-                                            } ?> Kritikan dengan Hastag #KritikStikom</h4>
-                            </div>
-                            <div class="chart-one">
-                                <canvas id="myChartFC" width="400px" height="400px"></canvas>
-                                
-                                <br>
-                            </div>
-                        </div>
-
-                        <div class="">
-                            <div class="name-tag">
-
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="analysis-chart-two">
-                <div class="row">
-                        <div class="">
-                            <div class="nam-tag">
-
-                            </div>
-                        </div>
-                        <div class="col-md-12">
-                            <div class="name-tag">
-                                <h3>Analisis Jumlah Kritik Terhadap Stikom Surabaya Melalui Facebook</h3>
-                                <h4>Terdapat Kritikan dengan kata Jelek, Sebel, Kurang, Kotor</h4>
-                            </div>
-                            <div class="chart-one">
-                                <canvas id="myFacebookFC" width="400" height="400"></canvas>
-
-                            </div>
-                        </div>
-                        <div class="">
-                            <div class="name-tag">
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-            
-        </div>
-    </div>
-
-    
 </body>
 
 </html>
-
-
-
-<script>
-    var ctx = document.getElementById("myChartDT").getContext('2d');
-    var myChart = new Chart(ctx, {
-        type: 'polarArea',
-        data: {
-            labels: ["Angkatan 14", "Angkatan 15", "angkatan 16", "angkatan 17", "angkatan 18"],
-            datasets: [{
-                label: 'Jumlah Kritik',
-                data: [
-                    <?php while ($angkatan_14 = mysqli_fetch_array($angkatan14)) {
-                        echo $angkatan_14['tweet14'];
-                    } ?>,
-                    <?php while ($angkatan_15 = mysqli_fetch_array($angkatan15)) {
-                        echo $angkatan_15['tweet15'];
-                    } ?>,
-                    <?php while ($angkatan_16 = mysqli_fetch_array($angkatan16)) {
-                        echo $angkatan_16['tweet16'];
-                    } ?>,
-                    <?php while ($angkatan_17 = mysqli_fetch_array($angkatan17)) {
-                        echo $angkatan_17['tweet17'];
-                    } ?>,
-                    <?php while ($angkatan_18 = mysqli_fetch_array($angkatan18)) {
-                        echo $angkatan_18['tweet18'];
-                    } ?>
-                    
-                ],
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(75, 192, 192, 0.2)',
-                    'rgba(153, 102, 255, 0.2)'
-                ],
-                borderColor: [
-                    'rgba(255,99,132,1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(153, 102, 255, 1)'
-                ],
-                borderWidth: 1
-            }]
-        },
-        options: {
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero: true
-                    }
-                }]
-            }
-        }
-    });
-</script>
-
-<script>
-    var ctx = document.getElementById("myFacebookDT").getContext('2d');
-    var myChart = new Chart(ctx, {
-        type: 'pie',
-        data: {
-            labels: ["Angkatan 14", "Angkatan 15", "angkatan 16", "angkatan 17", "angkatan 18"],
-            datasets: [{
-                label: '# of Votes',
-                data: [ <?php while ($angkatan_14FB = mysqli_fetch_array($angkatan14FB)) {
-                            echo $angkatan_14FB['pesan14'];
-                        }; ?>,
-                        <?php while ($angkatan_15FB = mysqli_fetch_array($angkatan15FB)) {
-                            echo $angkatan_15FB['pesan15'];
-                        }; ?> ,
-                         <?php while ($angkatan_16FB = mysqli_fetch_array($angkatan16FB)) {
-                            echo $angkatan_16FB['pesan16'];
-                        }; ?>,
-                         <?php while ($angkatan_17FB = mysqli_fetch_array($angkatan17FB)) {
-                            echo $angkatan_17FB['pesan17'];
-                        }; ?>, 
-                         <?php while ($angkatan_18FB = mysqli_fetch_array($angkatan18FB)) {
-                            echo $angkatan_18FB['pesan18'];
-                        }; ?>],
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(75, 192, 192, 0.2)',
-                    'rgba(153, 102, 255, 0.2)'
-                ],
-                borderColor: [
-                    'rgba(255,99,132,1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(153, 102, 255, 1)'
-                ],
-                borderWidth: 1
-            }]
-        },
-        options: {
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero: true
-                    }
-                }]
-            }
-        }
-    });
-</script>
-
-
-
-
-<script>
-    var ctx = document.getElementById("myChartTC").getContext('2d');
-    var myChart = new Chart(ctx, {
-        type: 'polarArea',
-        data: {
-            labels: ["Angkatan 14", "Angkatan 15", "angkatan 16", "angkatan 17", "angkatan 18"],
-            datasets: [{
-                label: 'Jumlah Kritik',
-                data: [
-                    <?php while ($angkatan_14 = mysqli_fetch_array($angkatan14TC)) {
-                        echo $angkatan_14['tweet14'];
-                    } ?>,
-                    <?php while ($angkatan_15 = mysqli_fetch_array($angkatan15TC)) {
-                        echo $angkatan_15['tweet15'];
-                    } ?>,
-                    <?php while ($angkatan_16 = mysqli_fetch_array($angkatan16TC)) {
-                        echo $angkatan_16['tweet16'];
-                    } ?>,
-                    <?php while ($angkatan_17 = mysqli_fetch_array($angkatan17TC)) {
-                        echo $angkatan_17['tweet17'];
-                    } ?>,
-                    <?php while ($angkatan_18 = mysqli_fetch_array($angkatan18TC)) {
-                        echo $angkatan_18['tweet18'];
-                    } ?>
-                    
-                ],
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(75, 192, 192, 0.2)',
-                    'rgba(153, 102, 255, 0.2)'
-                ],
-                borderColor: [
-                    'rgba(255,99,132,1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(153, 102, 255, 1)'
-                ],
-                borderWidth: 1
-            }]
-        },
-        options: {
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero: true
-                    }
-                }]
-            }
-        }
-    });
-</script>
-
-
-<script>
-    var ctx = document.getElementById("myFacebookTC").getContext('2d');
-    var myChart = new Chart(ctx, {
-        type: 'pie',
-        data: {
-            labels: ["Jelek", "Sebel", "Kurang", "Kotor"],
-            datasets: [{
-                label: '# of Votes',
-                data: [ <?php while ($angkatan_14AN = mysqli_fetch_array($angkatan14AN)) {
-                            echo $angkatan_14AN['tweet14AN'];
-                        }; ?>,
-                         <?php while ($angkatan_15AN = mysqli_fetch_array($angkatan15AN)) {
-                            echo $angkatan_15AN['tweet15AN'];
-                        }; ?>,
-                         <?php while ($angkatan_16AN = mysqli_fetch_array($angkatan16AN)) {
-                            echo $angkatan_16AN['tweet16AN'];
-                        }; ?>
-                         ,<?php while ($angkatan_17AN = mysqli_fetch_array($angkatan17AN)) {
-                                echo $angkatan_17AN['tweet17AN'];
-                            }; ?> 
-                         ],
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(75, 192, 192, 0.2)',
-                    'rgba(153, 102, 255, 0.2)'
-                ],
-                borderColor: [
-                    'rgba(255,99,132,1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(153, 102, 255, 1)'
-                ],
-                borderWidth: 1
-            }]
-        },
-        options: {
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero: true
-                    }
-                }]
-            }
-        }
-    });
-</script>
-
-
-<script>
-    var ctx = document.getElementById("myChartFC").getContext('2d');
-    var myChart = new Chart(ctx, {
-        type: 'pie',
-        data: {
-            labels: ["Angkatan 14", "Angkatan 15", "angkatan 16", "angkatan 17", "angkatan 18"],
-            datasets: [{
-                label: '# of Votes',
-                data: [ <?php while ($angkatan_14FB = mysqli_fetch_array($angkatan14FC)) {
-                            echo $angkatan_14FB['pesan14'];
-                        }; ?>,
-                        <?php while ($angkatan_15FB = mysqli_fetch_array($angkatan15FC)) {
-                            echo $angkatan_15FB['pesan15'];
-                        }; ?> ,
-                         <?php while ($angkatan_16FB = mysqli_fetch_array($angkatan16FC)) {
-                            echo $angkatan_16FB['pesan16'];
-                        }; ?>,
-                         <?php while ($angkatan_17FB = mysqli_fetch_array($angkatan17FC)) {
-                            echo $angkatan_17FB['pesan17'];
-                        }; ?>, 
-                         <?php while ($angkatan_18FB = mysqli_fetch_array($angkatan18FC)) {
-                            echo $angkatan_18FB['pesan18'];
-                        }; ?>],
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(75, 192, 192, 0.2)',
-                    'rgba(153, 102, 255, 0.2)'
-                ],
-                borderColor: [
-                    'rgba(255,99,132,1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(153, 102, 255, 1)'
-                ],
-                borderWidth: 1
-            }]
-        },
-        options: {
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero: true
-                    }
-                }]
-            }
-        }
-    });
-</script>
-
-<script>
-    var ctx = document.getElementById("myFacebookFC").getContext('2d');
-    var myChart = new Chart(ctx, {
-        type: 'pie',
-        data: {
-            labels: ["Jelek", "Sebel", "Kurang", "Kotor"],
-            datasets: [{
-                label: '# of Votes',
-                data: [ <?php while ($angkatan_14AN = mysqli_fetch_array($angkatan14FBFC)) {
-                            echo $angkatan_14AN['pesan14AN'];
-                        }; ?>,
-                         <?php while ($angkatan_15AN = mysqli_fetch_array($angkatan15FBFC)) {
-                            echo $angkatan_15AN['pesan15AN'];
-                        }; ?>,
-                         <?php while ($angkatan_16AN = mysqli_fetch_array($angkatan16FBFC)) {
-                            echo $angkatan_16AN['pesan16AN'];
-                        }; ?>
-                         ,<?php while ($angkatan_17AN = mysqli_fetch_array($angkatan17FBFC)) {
-                                echo $angkatan_17AN['pesan17AN'];
-                            }; ?> 
-                         ],
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(75, 192, 192, 0.2)',
-                    'rgba(153, 102, 255, 0.2)'
-                ],
-                borderColor: [
-                    'rgba(255,99,132,1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(153, 102, 255, 1)'
-                ],
-                borderWidth: 1
-            }]
-        },
-        options: {
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero: true
-                    }
-                }]
-            }
-        }
-    });
-</script>

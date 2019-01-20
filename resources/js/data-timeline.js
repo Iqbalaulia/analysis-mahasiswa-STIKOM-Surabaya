@@ -1,7 +1,3 @@
-$(document).ready(function () {
-    $('#example').DataTable();
-});
-
 /*============================================================================
                                     Évelym S.
                     https://www.linkedin.com/in/evelym-santos/

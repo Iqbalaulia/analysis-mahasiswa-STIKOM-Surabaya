@@ -38,6 +38,8 @@ foreach ($status as $key => $tweet) {
   } else {
     $sql = "INSERT INTO twitter_timeline(nama,screen_name,tweet,gambar,tanggal,lokasi) VALUE ('$name','$screen_name','$status','$gambar','$tanggal','$lokasi')";
     $query = mysqli_query($db, $sql);
+    header('Location: twitter-crawling.php');
+
   }
 
 

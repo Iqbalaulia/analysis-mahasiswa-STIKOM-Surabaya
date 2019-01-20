@@ -1,0 +1,442 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+/* Content One */
+
+.content-header {
+  width: 100%;
+  height: 100vh;
+  background: url("http://localhost/WEB/website/integrasi-data-perbaikan/resources/images/analysis.jpg")
+    no-repeat 50% 50%;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.content-header .content-header-view-one {
+  width: 100%;
+  height: auto;
+  /* border: 1px solid #000; */
+  padding: 5%;
+  /* border-bottom: 1px solid #000000; */
+}
+
+.content-header .content-header-view-two {
+  width: 100%;
+  height: auto;
+  /* border: 1px solid #000; */
+  padding: 5%;
+  /* border-bottom: 1px solid #000000; */
+}
+
+.content-header .content-header-view-three {
+  width: 100%;
+  height: auto;
+  /* border: 1px solid #000; */
+  padding: 5%;
+  /* border-bottom: 1px solid #000000; */
+  border-width: 10px;
+}
+
+.content-header .content-header-view-three h1 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 60px;
+  color: #000000;
+  font-family: "Abril Fatface", cursive;
+
+  /* font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif; */
+}
+
+/* .content-header-view img {
+  width: 50%;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+} */
+
+/* End Content */
+
+/* Content two */
+
+.content-two {
+  width: 100%;
+  height: auto;
+  padding: 2%;
+  /* border: 1px solid #000000; */
+}
+
+.content-two .content-two-header {
+  width: 100%;
+  height: auto;
+  padding: 1%;
+  /* border: 1px solid #000000; */
+  box-shadow: 1px 1px 4px 4px rgba(238, 238, 238, 1);
+  border-radius: 20px;
+  background-color: white;
+}
+
+.content-two .content-two-header:hover {
+  background-color: #fafafa;
+}
+
+.content-two .content-two-header h1 {
+  text-align: center;
+  color: black;
+  font-weight: bold;
+  font-family: fantasy;
+}
+
+.content-two-purpose {
+  width: 100%;
+  height: auto;
+  /* border: 1px solid #000000; */
+  padding: 3%;
+}
+
+.content-two-purpose .content-purpose {
+  width: 100%;
+  height: auto;
+  padding: 1%;
+  /* border: 1px solid #000000; */
+}
+
+.content-two-purpose .content-purpose h2 {
+  text-align: center;
+  font-weight: bold;
+  color: #000000;
+  font-family: "EB Garamond", serif;
+}
+
+.content-purpose p {
+  color: #000000;
+  text-align: center;
+  font-size: 25px;
+  font-family: fantasy;
+}
+
+/* End Content */
+
+/* Content three */
+.content-three {
+  width: 100%;
+  height: auto;
+  /* border: 1px solid #000000; */
+  padding: 2%;
+  background-color: #fafafa;
+}
+
+.content-three-header {
+  width: 100%;
+  height: auto;
+  /* border: 1px solid #000000; */
+}
+
+.content-three-header h2 {
+  font-weight: bold;
+  color: #000000;
+  text-align: center;
+  font-family: "EB Garamond", serif;
+  /* border-bottom: 1px solid #000000; */
+}
+
+.content-three .content-three-FT {
+  width: 100%;
+  height: auto;
+  /* border: 1px solid #000000; */
+  padding: 3%;
+}
+
+.content-three-FT .content-three-facebook-diagram {
+  width: 100%;
+  height: auto;
+  padding: 5%;
+  /* border: 1px solid #000000; */
+}
+
+.content-three-FT .content-three-twitter-diagram {
+  width: 100%;
+  height: auto;
+  /* border: 1px solid #000000; */
+  padding: 5%;
+}
+
+.facebook-diagram {
+  width: 100%;
+  height: auto;
+  padding: 3%;
+  border-radius: 10px;
+  /* border: 1px solid #000000; */
+  box-shadow: 1px 1px 4px 4px rgba(238, 238, 238, 1);
+}
+
+.facebook-diagram h4 {
+  text-align: center;
+  color: #000000;
+  font-family: fantasy;
+}
+
+.facebook-diagram h5 {
+  text-align: center;
+  color: #000000;
+  font-family: fantasy;
+}
+
+.twitter-diagram {
+  width: 100%;
+  height: auto;
+  padding: 3%;
+  border-radius: 10px;
+
+  /* border: 1px solid #000000; */
+  box-shadow: 1px 1px 4px 4px rgba(238, 238, 238, 1);
+}
+
+.twitter-diagram h4 {
+  text-align: center;
+  color: #000000;
+  font-family: fantasy;
+}
+
+.twitter-diagram h5 {
+  text-align: center;
+  color: #000000;
+  font-family: fantasy;
+}
+
+/* End Content */
+
+/* Content Four */
+
+.content-analysis {
+  width: 100%;
+  height: 50vh;
+  background: url("http://localhost/WEB/website/integrasi-data-perbaikan/resources/images/stikom.jpg")
+    no-repeat 50% 50%;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.content-analysis .content-analysis-view {
+  width: 100%;
+  height: auto;
+  /* border: 1px solid #000; */
+}
+
+/* End Content */
+
+/* Content Five */
+.content-analysis-facebook {
+  width: 100%;
+  height: auto;
+  /* border: 1px solid #000000; */
+  padding: 5%;
+}
+
+.content-analysis-facebook .content-diagram-analysis-facebook {
+  width: 100%;
+  height: auto;
+  /* border: 1px solid #000000; */
+  padding: 5%;
+}
+
+.content-analysis-facebook h2 {
+  font-weight: bold;
+  color: #000000;
+  text-align: center;
+  font-family: "EB Garamond", serif;
+  /* border-bottom: 1px solid #000000; */
+}
+
+.content-analysis-facebook p {
+  color: #000000;
+  text-align: center;
+  font-size: 20px;
+  font-family: fantasy;
+}
+
+.content-analysis-facebook-one {
+  width: 100%;
+  height: auto;
+  padding: 3%;
+  border-radius: 10px;
+  /* border: 1px solid #000000; */
+  box-shadow: 1px 1px 4px 4px rgba(238, 238, 238, 1);
+}
+
+.content-analysis-facebook-two {
+  width: 100%;
+  height: auto;
+  /* border: 1px solid #000000; */
+}
+
+.content-analysis-facebook h5 {
+  text-align: center;
+  color: #000000;
+  font-family: fantasy;
+}
+
+.content-analysis-facebook h4 {
+  text-align: center;
+  color: #000000;
+  font-family: fantasy;
+}
+
+.content-analysis-facebook img {
+  width: 100%;
+}
+
+/* End Content */
+
+/* Content Six */
+.content-pembatas {
+  width: 100%;
+  height: 300px;
+  /* border: 1px solid #000000; */
+  background-color: rgba(246, 71, 71, 1);
+}
+
+/* End Content */
+
+/* Content Seven */
+.content-analysis-twitter {
+  width: 100%;
+  height: auto;
+  /* border: 1px solid #000000; */
+  padding: 5%;
+}
+
+.content-analysis-twitter img {
+  width: 40%;
+  height: auto;
+}
+
+.content-analysis-twitter .content-diagram-analysis-twitter {
+  width: 100%;
+  height: auto;
+  /* border: 1px solid #000000; */
+  padding: 5%;
+}
+
+.content-analysis-twitter h2 {
+  font-weight: bold;
+  color: #000000;
+  text-align: center;
+  font-family: "EB Garamond", serif;
+  /* border-bottom: 1px solid #000000; */
+}
+
+.content-analysis-twitter p {
+  color: #000000;
+  text-align: center;
+  font-size: 20px;
+  font-family: fantasy;
+}
+
+.content-analysis-twitter-two {
+  width: 100%;
+  height: auto;
+  padding: 3%;
+  border-radius: 10px;
+  /* border: 1px solid #000000; */
+  box-shadow: 1px 1px 4px 4px rgba(238, 238, 238, 1);
+}
+
+.content-analysis-twitter-one {
+  width: 100%;
+  height: auto;
+  /* border: 1px solid #000000; */
+}
+
+.content-analysis-twitter-two h5 {
+  text-align: center;
+  color: #000000;
+  font-family: fantasy;
+}
+
+.content-analysis-twitter-two h4 {
+  text-align: center;
+  color: #000000;
+  font-family: fantasy;
+}
+
+.content-analysis-twitter img {
+  width: 100%;
+}
+
+/* End Content */
+
+#tombolScrollTop {
+  cursor: pointer;
+  position: fixed;
+  left: 96%;
+  bottom: 50px;
+  /* border: 3px solid #585858; */
+  background-color: white;
+  color: #585858;
+  border-radius: 100%;
+  height: 50px;
+  width: 50px;
+  font-size: 15px;
+  display: none;
+}
+
+@media (max-width: 580px) {
+  .content-jam-digital .clockStyle {
+    font-size: 50px;
+    border-bottom: 1px solid;
+    border-color: #5490ee;
+    color: #fff;
+    font-family: "Noto Serif", serif;
+  }
+
+  #tombolScrollTop {
+    cursor: pointer;
+    position: fixed;
+    left: 87%;
+    bottom: 50px;
+    border: 3px solid #585858;
+    background-color: white;
+    color: #585858;
+    border-radius: 100%;
+    height: 40px;
+    width: 40px;
+    font-size: 15px;
+    display: none;
+  }
+}
+
+/* Content Seven */
+
+.content-seven {
+  width: 100%;
+  height: auto;
+  /* border: 1px solid #000000; */
+  padding: 6%;
+}
+
+.content-seven .content-diagram-all {
+  width: 100%;
+  height: auto;
+  /* border: 1px solid #000000; */
+}
+
+.content-text-perbandingan {
+  width: 100%;
+  height: auto;
+  /* border: 1px solid #000000; */
+}
+
+.content-text-perbandingan h1 {
+  color: #000000;
+  text-align: center;
+  font-family: fantasy;
+}
