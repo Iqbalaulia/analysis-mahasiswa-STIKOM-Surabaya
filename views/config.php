@@ -2,7 +2,7 @@
 
 $server = "localhost";
 $user = "root";
-$password = "sepatusandal12";
+$password = "";
 $nama_database = "akses_tweet_global";
 
 $db = new mysqli($server, $user, $password, $nama_database);
